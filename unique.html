@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unique</title>
+    <script>
+        function uni(){
+            var a=new Array();
+            var n=parseInt(window.prompt("Enter the Size of array:"));
+            for(var i=0;i<n;i++){
+                a[i]=parseInt(window.prompt("Enter the values of array:"));
+            } 
+            for(var i=0;i<n;i++)
+            {
+                for(var j=i+1;j<n;)
+                {
+                    if(a[i]==a[j]){
+                         for(var k=j;k<n;k++){
+                            a[k]=a[k+1];
+                         }
+                         n--;
+                    }
+                    else{
+                        j++;
+                    }
+                }
+            }
+            document.write("unique values are:<br>")
+            for(var i=0;i<n;i++){
+                document.write(a[i]+"<br>");
+            } 
+        }
+    </script>
+</head>
+<body onload="uni()">
+</body>
+</html>
